@@ -1,0 +1,19 @@
+<div class="bg-yellow-700 w-2/12 h-screen text-white">
+    <div class="flex p-5 items-center justify-center bg-yellow-800">
+        <h1 class="font-semibold">MENU</h1>
+    </div>
+    <ul class="rounded">
+        <li class="py-3 border-b-2 border-l-4 px-2 hover:bg-white hover:text-yellow-700 cursor-pointer hover:border-yellow-700"
+            routerLink='/capital' routerLinkActive='active' [routerLinkActiveOptions]={exact:true}>
+            Capital
+        </li>
+        <li class="py-3 border-b-2 border-l-4 px-2 hover:bg-white hover:text-yellow-700 cursor-pointer hover:border-yellow-700"
+            routerLink='/region' routerLinkActive='active'>
+            Region
+        </li>
+        <li class="py-3 border-b-2 border-l-4 px-2 hover:bg-white hover:text-yellow-700 cursor-pointer hover:border-yellow-700"
+            routerLink="/pais" routerLinkActive='active'>
+            Pais
+        </li>
+    </ul>
+</div>
