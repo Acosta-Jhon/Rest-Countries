@@ -16,13 +16,11 @@ export class ForRegionComponent implements OnInit {
 
   constructor(private _regionService: CountryService) { }
 
-  searchRegion() {
+  searchRegion(name:string) {
     this.submitted = true;
-    const region: any = {
-      name: this.name
-    }
+    this.name = name
 
-    this._regionService.searchRegion(region.name).subscribe((res) => {
+    this._regionService.searchRegion(name).subscribe((res) => {
       this.regions = res;
       console.log(this.regions);
     },

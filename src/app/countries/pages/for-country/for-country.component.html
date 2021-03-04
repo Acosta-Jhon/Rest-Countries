@@ -2,10 +2,12 @@
     <hr>
     <div class="flex items-center justify-start">
         <div>
-            <h1 class="text-center text-2xl font-semibold">País</h1>
+            <h1 class="text-center text-2xl font-semibold">PAÍS</h1>
             <div class='p-5'>
-                <app-country-form (click)="search($event)"></app-country-form>
-                <span class="text-red-500 text-sm" *ngIf="termino == '' && submitted">
+
+                <app-country-form (sendName)="searchCountry($event)"></app-country-form>
+                
+                <span class="text-red-500 text-sm" *ngIf="name == '' && submitted">
                     Campo vacio o no se encontro ningun considencia
                 </span>
             </div>

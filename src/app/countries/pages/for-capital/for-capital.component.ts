@@ -16,12 +16,10 @@ export class ForCapitalComponent implements OnInit {
 
   constructor(private _capitalService: CountryService) { }
 
-  search() {
+  searchCapital(name: string) {
     this.submitted = true;
-    const capital: any = {
-      name: this.name
-    }
-    this._capitalService.searchCapital(capital.name).subscribe(res => {
+    this.name = name;
+    this._capitalService.searchCapital(name).subscribe((res) => {
       this.capitals = res;
       console.log(this.capitals)
     },

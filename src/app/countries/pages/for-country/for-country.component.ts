@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 import { Country } from '../../interfaces/country.interface';
 import { CountryService } from '../../services/country.service';
 
@@ -13,27 +12,20 @@ export class ForCountryComponent {
   submitted = false;
   countries: Array<Country> = [];
   controlError: boolean = false
-  termino: string = '';
+  name: string = '';
 
   constructor(private _countryService: CountryService) { }
 
-  buscar() {
+  searchCountry(name:string) {
     this.submitted = true;
-    const search: any = {
-      termino: this.termino
-    }
-    this._countryService.searchCountry(search.termino).subscribe(res => {
-      this.countries = res
+    this.name = name
+    this._countryService.searchCountry(name).subscribe((res) => {
+      this.countries = res;
     },
-      err => {
+      (err) => {
         this.controlError = true;
         this.countries = [];
-        //console.log(err)
+        console.log(err)
       })
-  }
-
-  search(e:any){
-    this.termino = e
-    this.buscar()
   }
 }

@@ -1,5 +1,4 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-country-form',
@@ -8,17 +7,17 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 })
 export class CountryFormComponent implements OnInit {
 
-  termino:string='';
+  name:string= '';
 
-  @Output() search = new EventEmitter<string>()
+  @Output() sendName:EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
-  buscar(){
-    this.search.emit(this.termino)
+  searchNameCountry(){
+    this.sendName.emit(this.name)
   }
 
   ngOnInit(): void {
-  }
+  } 
 
 }
