@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Region } from '../../interfaces/region.interface';
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-for-region',
@@ -7,7 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForRegionComponent implements OnInit {
 
-  constructor() { }
+  submitted: boolean = false;
+  regions: Array<Region> = [];
+  controlError: boolean = false;
+  name: string = '';
+
+  constructor(private _regionService: CountryService) { }
+
+  searchRegion() {
+    this.submitted = true;
+    const region: any = {
+      name: this.name
+    }
+
+    this._regionService.searchRegion(region.name).subscribe((res) => {
+      this.regions = res;
+      console.log(this.regions);
+    },
+      (err) => {
+        this.controlError = true;
+        this.regions = [];
+        console.log(err);
+      });
+  }
 
   ngOnInit(): void {
   }

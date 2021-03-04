@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountryTableComponent } from './country-table.component';
+import { RegionFormComponent } from './region-form.component';
 
-describe('CountryTableComponent', () => {
-  let component: CountryTableComponent;
-  let fixture: ComponentFixture<CountryTableComponent>;
+describe('RegionFormComponent', () => {
+  let component: RegionFormComponent;
+  let fixture: ComponentFixture<RegionFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CountryTableComponent ]
+      declarations: [ RegionFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CountryTableComponent);
+    fixture = TestBed.createComponent(RegionFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

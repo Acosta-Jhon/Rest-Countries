@@ -1,0 +1,63 @@
+<table class="border-collapse w-full">
+    <thead>
+        <tr>
+            <th
+                class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+                Region
+            </th>
+            <th
+                class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+                Pais
+            </th>
+            <th
+                class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+                Nacionalidad
+            </th>
+            <th
+                class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+                Region
+            </th>
+            <th
+                class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+                Bandera
+            </th>
+            <th
+                class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0"
+            *ngFor='let region of regions'>
+            <td
+                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                {{region.region}}
+            </td>
+            <td
+                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                {{region.name}}
+            </td>
+            <td
+                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                {{region.demonym}}
+            </td>
+            <td
+                class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                {{region.region}}
+            </td>
+            <td
+                class="w-full flex items-center justify-center lg:w-auto p-3 text-gray-800 text-center border border-b  lg:table-cell relative lg:static">
+                <img [src]="region.flag" alt="Not Found" class="w-32 h-14 ">
+            </td>
+            <td
+                class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
+                <i class="far fa-edit fa-lg px-2 cursor-pointer text-yellow-500">
+                    <a routerLink="['/pais, region.alpha2Code']"></a>
+                </i>
+                <!--Property Binding-->
+                <i class="far fa-trash-alt fa-lg cursor-pointer text-red-600"></i>
+            </td>
+        </tr>
+    </tbody>
+</table>
